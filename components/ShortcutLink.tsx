@@ -1,4 +1,12 @@
-export default function ShortcutLink({ link, title, description } : { link:string, title:string, description:string }) {
+export default function ShortcutLink({ 
+    link, 
+    title, 
+    description 
+  } : { 
+    link: string, 
+    title: string, 
+    description: string 
+  }) {
   return (
     <a href={link} className="group rounded-lg px-5 py-4 transition-colors border border-transparent hover:border-gray-300 hover:bg-gray-100">
       <h2 className="text-2xl font-semibold mb-2">

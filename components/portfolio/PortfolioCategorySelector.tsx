@@ -1,18 +1,18 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import PortfolioCategoryTile from '@/components/portfolio/PortfolioCategoryTile';
 import ScrollButton from '@/components/ScrollButton';
 
 export default function PortfolioCategorySelector({ 
-    translations: t, 
     categories,
     onCategoryChange,
   }: { 
-    translations: any,
     categories: PortfolioCategory[],
     onCategoryChange: (category: string) => void,
   }) {
+  const t = useTranslations('portfolio');
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const [visibleScrollButton, setVisibleScrollButton] = useState('none');
@@ -114,7 +114,7 @@ export default function PortfolioCategorySelector({
               onClick={() => selectCategory(category.id)}
             >
               <PortfolioCategoryTile 
-                name={t[category.id]} 
+                name={t(category.id)} 
                 picture={category.picture} 
                 background={category.background}
                 isSelected={selectedCategory === category.id || selectedCategory === 'discovery'}

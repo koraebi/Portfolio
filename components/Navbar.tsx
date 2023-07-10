@@ -1,13 +1,15 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import Socials from '../components/Socials';
-import LanguageSwitcher from '../components/LanguageSwitcher';
-import { Pages, Languages } from '../constants/common';
+import Socials from '@/components/Socials';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { Pages, Languages } from '@/constants/common';
 
-export default function Navbar({ translations: t, locale }: { translations: any, locale: string }) {
+export default function Navbar() {
+  const t = useTranslations('home');
   const pathname = usePathname().replace(new RegExp(`\\/(${Languages.join('|')})($|\\/)`, 'i'), '/'); 
 
   return (
@@ -21,15 +23,18 @@ export default function Navbar({ translations: t, locale }: { translations: any,
           <Link 
             key={page} 
             href={`/${page}`} 
-            className={`capitalize text-gray-${pathname === `/${page}` ? '800' : '400'} hover:text-gray-800`}
+            className={`
+              capitalize 
+              ${pathname === `/${page}` ? 'text-gray-800' : 'text-gray-400'} 
+              hover:text-gray-800`}
           >
-            {t[page]}
+            {t(page)}
           </Link>
         ))}
       </div>
       <div className="hidden lg:flex ml-auto place-items-center">
         <div className="mr-10">
-          <LanguageSwitcher locale={locale} pathname={pathname} languages={Languages}/>
+          <LanguageSwitcher pathname={pathname} languages={Languages}/>
         </div>
         <Socials/>
       </div>

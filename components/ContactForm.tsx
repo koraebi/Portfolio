@@ -1,8 +1,11 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-export default function ContactForm({ translations: t }: { translations: any }) {
+export default function ContactForm() {
+  const t = useTranslations('contact');
+
   const [name, setName] = useState('');
   const [from, setFrom] = useState('');
   const [subject, setSubject] = useState('');
@@ -29,7 +32,7 @@ export default function ContactForm({ translations: t }: { translations: any }) 
 
       setIsSubmitted(response.ok);
     } catch (error) {
-      alert(t['error'])
+      alert(t('error'))
     }
     setIsSubmitting(false);
   };
@@ -43,7 +46,7 @@ export default function ContactForm({ translations: t }: { translations: any }) 
         name="name"
         autoComplete="name"
         required
-        placeholder={t['name']}
+        placeholder={t('name')}
         value={name}
         onChange={(event: ChangeEvent<HTMLInputElement>) => setName(event.target.value)}
       />
@@ -54,7 +57,7 @@ export default function ContactForm({ translations: t }: { translations: any }) 
         name="email"
         autoComplete="email"
         required
-        placeholder={t['email']}
+        placeholder={t('email')}
         value={from}
         onChange={(event: ChangeEvent<HTMLInputElement>) => setFrom(event.target.value)}
       />
@@ -65,14 +68,14 @@ export default function ContactForm({ translations: t }: { translations: any }) 
         name="subject"
         autoComplete="subject"
         required
-        placeholder={t['subject']}
+        placeholder={t('subject')}
         value={subject}
         onChange={(event: ChangeEvent<HTMLInputElement>) => setSubject(event.target.value)}
       />
       <textarea 
         id="message" 
         name="message" 
-        placeholder={t['message']} 
+        placeholder={t('message')} 
         className="border-2 rounded-lg p-2" 
         rows={5}
         value={message}
@@ -92,7 +95,7 @@ export default function ContactForm({ translations: t }: { translations: any }) 
         type="submit">
         {!isSubmitting ? (
             <div>
-              {isSubmitted ? t['submitted'] : t['submit']}
+              {isSubmitted ? t('submitted') : t('submit')}
             </div>
           ) : (
             <svg 
@@ -101,7 +104,14 @@ export default function ContactForm({ translations: t }: { translations: any }) 
               fill="none" 
               viewBox="0 0 24 24"
             >
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <circle 
+                className="opacity-25" 
+                cx="12" 
+                cy="12" 
+                r="10" 
+                stroke="currentColor" 
+                stroke-width="4"
+              />
               <path 
                 className="opacity-75" 
                 fill="currentColor" 

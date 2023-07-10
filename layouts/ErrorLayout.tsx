@@ -1,7 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { getTranslator } from 'next-intl/server';
 
-export default function ErrorLayout() {
-  const t: any = useTranslations('error');
+export default async function ErrorLayout() {
+  const locale = useLocale();
+  const t: any = await getTranslator(locale, 'error');
 
   return (
     <main className="flex flex-col p-5 mt-5 lg:px-40">

@@ -1,9 +1,9 @@
-import '../globals.css';
+import { NextIntlClientProvider } from 'next-intl';
+import { Inter } from 'next/font/google';
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Inter } from 'next/font/google';
-import { redirect } from 'next/navigation';
+import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,22 +12,28 @@ export const metadata = {
   description: 'Building digital products according to UX fundamentals and Software Engineering principles.',
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ 
+  children,
+}: { 
+  children: React.ReactNode,
+}) {
   let translations;
   try {
-    translations = (await import(`@/translations/en.json`)).home;
+    translations = (await import(`@/translations/en.json`)).default;
   } catch (error) {
-    redirect('/error');
+    console.log(error)
   }
 
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <Navbar translations={translations} locale="en"/>
-        <div className={inter.className}>
-          {children}
-        </div>
-        <Footer locale="en"/>
+        <NextIntlClientProvider locale="en" messages={translations}>
+          <Navbar/>
+          <div className={inter.className}>
+            {children}
+          </div>
+          <Footer/>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

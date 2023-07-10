@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import basePicture from '/public/designerEngineer.png';
@@ -7,6 +8,8 @@ import designerPicture from '/public/designer.png';
 import engineerPicture from '/public/engineer.png';
 
 export default function HomeBanner() {
+  const t = useTranslations('home');
+
   const [opacityDesigner, setOpacityDesigner] = useState(0);
   const [opacityEngineer, setOpacityEngineer] = useState(0);
 
@@ -53,19 +56,19 @@ export default function HomeBanner() {
           onMouseLeave={() => handleMouseEvent('')}
         >
           <h1 className="font-extrabold mb-2 text-5xl group-hover:text-6xl ease-in duration-300">
-            Designer
+            {t('designer')}
           </h1>
           <div className="text-gray-500">
             <p className="font-semibold mb-1">
-              Interaction • User Experience • User Interface
+              {t('designerSubtitle')}
             </p>
             <div className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <p className="font-normal">
-                Developping Digital Products following the Design Thinking process <br className="hidden lg:block"/>
-                and the Human-Centred Design industry norm <span className="text-xs">(ISO 9241-210-2019).</span>
+                {t('designerDescription1')} <br className="hidden lg:block"/>
+                {t('designerDescription2')} <span className="text-xs">{t('designerDescription3')}</span>
               </p>
               <p className="font-medium">
-                Specifying -&gt; Producing -&gt; Evaluating
+                {t('designerDescription4')}
               </p>
             </div>
           </div>
@@ -76,19 +79,19 @@ export default function HomeBanner() {
           onMouseLeave={() => handleMouseEvent('')}
         >
           <h1 className="font-extrabold mb-2 text-5xl group-hover:text-6xl ease-in duration-300">
-            Engineer
+            {t('engineer')}
           </h1>
           <div className="text-gray-500">
             <p className="font-semibold mb-1">
-              Responsive Web • Native Mobile • Microservice
+              {t('engineerSubtitle')}
             </p>
             <div className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <p className="font-normal">
-                Building Software Solutions following the Agile methodology <br className="hidden lg:block"/>
-                and the iterative Software Development Life Cycle model.
+                {t('engineerDescription1')} <br className="hidden lg:block"/>
+                {t('engineerDescription2')}
               </p>
               <p className="font-medium">
-                Analyzing -&gt; Coding -&gt; Testing
+                {t('engineerDescription3')}
               </p>
             </div>
           </div>

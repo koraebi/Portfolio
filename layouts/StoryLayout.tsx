@@ -1,10 +1,12 @@
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { getTranslator } from 'next-intl/server';
 import Image from 'next/image';
 import picturePartDesigner from '/public/partDesigner.png';
 import picturePartEngineer from '/public/partEngineer.png';
 
-export default function AboutLayout() {
-  const t: any = useTranslations('story');
+export default async function StoryLayout() {
+  const locale = useLocale();
+  const t: any = await getTranslator(locale, 'story');
 
   return (
     <main className="flex flex-col p-5 pt-10 lg:px-40">

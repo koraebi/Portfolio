@@ -1,15 +1,18 @@
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { getTranslator } from 'next-intl/server';
+import { ResumeLink } from '@/constants/common';
+import Rbr from '@/components/Rbr';
 import Image from 'next/image';
-import BR from '../components/BR';
+
 import pictureMeBoat from '/public/meBoat.jpeg';
 import pictureMeLaptop from '/public/meLaptop.jpeg';
 import pictureMeTower from '/public/meTower.jpeg';
 import picturePartDesigner from '/public/partDesigner.png';
 import picturePartEngineer from '/public/partEngineer.png';
-import { ResumeLink } from '../constants/common';
 
-export default function AboutLayout() {
-  const t: any = useTranslations('about');
+export default async  function AboutLayout() {
+  const locale = useLocale();
+  const t: any = await getTranslator(locale, 'about');
 
   return (
     <main className="flex flex-col p-5 pt-10 lg:px-40">
@@ -19,13 +22,13 @@ export default function AboutLayout() {
             {t('about')}
           </h1>
           <p className="text-lg mb-1">
-            {t('aboutSubtitle1')}<BR/>
+            {t('aboutSubtitle1')}<Rbr/>
             {t('aboutSubtitle2')}
           </p>
           <p className="font-light mb-4">
-            {t('aboutDescription1')}<BR/>
-            {t('aboutDescription2')}<BR/>
-            {t('aboutDescription3')}<BR/>
+            {t('aboutDescription1')}<Rbr/>
+            {t('aboutDescription2')}<Rbr/>
+            {t('aboutDescription3')}<Rbr/>
             {t('aboutDescription4')}
           </p>
           <a href={ResumeLink} target="_blank">
@@ -35,11 +38,19 @@ export default function AboutLayout() {
             </button>
           </a>
         </section>
-        <Image className="object-contain mb-5 lg:mb-0 h-[200px] lg:h-[350px] w-auto drop-shadow-lg" src={pictureMeBoat} alt=""/>
+        <Image 
+          className="object-contain mb-5 lg:mb-0 h-[200px] lg:h-[350px] w-auto drop-shadow-lg" 
+          src={pictureMeBoat} 
+          alt=""
+        />
       </div>
       <hr className="h-px my-8 bg-gray-200 border-0"/>
       <div className="flex flex-col lg:grid lg:grid-cols-3 lg:p-10 lg:gap-10 place-items-center">
-        <Image className="object-contain mb-5 lg:mb-0 h-[200px] lg:h-[400px] w-full drop-shadow-lg" src={picturePartEngineer} alt=""/>
+        <Image 
+          className="object-contain mb-5 lg:mb-0 h-[200px] lg:h-[400px] w-full drop-shadow-lg" 
+          src={picturePartEngineer}
+          alt=""
+        />
         <section className="col-span-2 ml-auto">
           <h1 className="font-extrabold mb-1 lg:mb-2 text-2xl lg:text-5xl text-center lg:text-left">
             {t('partEngineer')}
@@ -101,11 +112,19 @@ export default function AboutLayout() {
             {t('skillDesigner8')}<br/>
           </p>
         </section>
-        <Image className="object-contain mb-5 lg:mb-0 h-[200px] lg:h-[400px] w-full drop-shadow-lg" src={picturePartDesigner} alt=""/>
+        <Image 
+          className="object-contain mb-5 lg:mb-0 h-[200px] lg:h-[400px] w-full drop-shadow-lg" 
+          src={picturePartDesigner} 
+          alt=""
+        />
       </div>
       <hr className="h-px my-8 bg-gray-200 border-0"/>
       <div className="flex flex-col lg:grid lg:grid-cols-2 lg:p-10 lg:gap-10 place-items-center">
-        <Image className="object-contain h-[200px] lg:h-[350px] w-full drop-shadow-lg mb-5 lg:mb-0" src={pictureMeLaptop} alt=""/>
+        <Image 
+          className="object-contain h-[200px] lg:h-[350px] w-full drop-shadow-lg mb-5 lg:mb-0" 
+          src={pictureMeLaptop} 
+          alt=""
+        />
         <section className="w-full text-center lg:text-right">
           <h1 className="font-extrabold mb-1 lg:mb-2 text-2xl lg:text-5xl">
             {t('randomFacts')}
@@ -132,14 +151,18 @@ export default function AboutLayout() {
             {t('myStorySubtitle')}
           </p>
           <p className="font-light mb-4">
-            {t('myStoryDescription1')}<BR/>
+            {t('myStoryDescription1')}<Rbr/>
             {t('myStoryDescription2')}
           </p>
           <a className="rounded-full bg-lightBlack p-2 px-4 text-white" href="/story">
             {t('myStoryButton')}
           </a>
         </section>
-        <Image className="object-contain h-[200px] lg:h-[350px] w-full drop-shadow-lg mb-5 lg:mb-0" src={pictureMeTower} alt=""/>
+        <Image 
+          className="object-contain h-[200px] lg:h-[350px] w-full drop-shadow-lg mb-5 lg:mb-0" 
+          src={pictureMeTower} 
+          alt=""
+        />
       </div>
     </main>
   );

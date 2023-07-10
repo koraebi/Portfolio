@@ -1,12 +1,15 @@
 'use client';
 
-import { Sections, Projects, Categories } from '@/constants/portfolio';
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { Sections, Projects, Categories } from '@/constants/portfolio';
 import PortfolioProjectSelector from '@/components/portfolio/PortfolioProjectSelector';
 import PortfolioCategorySelector from '@/components/portfolio/PortfolioCategorySelector';
 import EmbedPreview from '@/components/EmbedPreview';
 
-export default function Portfolio({ translations: t }: { translations: any }) {
+export default function Portfolio() {
+  const t = useTranslations('portfolio');
+
   const [selectedSection, setSelectedSection] = useState('projects');
   const [selectedProject, setSelectedProject] = useState('');
 
@@ -55,19 +58,17 @@ export default function Portfolio({ translations: t }: { translations: any }) {
                 lg:text-5xl 
                 ${selectedSection === section ? 'text-gray-800' : 'text-gray-400'}`}
             >
-              {t[section]}
+              {t(section)}
             </h1>
           </div>
         ))}
       </div>
       <PortfolioCategorySelector 
-        translations={t} 
         categories={categories} 
         onCategoryChange={onCategoryChange}
       />
       <hr className="h-px bg-gray-200 border-0"/>
       <PortfolioProjectSelector 
-        translations={t} 
         projects={projects} 
         section={selectedSection}
         onProjectSelected={onProjectSelected}

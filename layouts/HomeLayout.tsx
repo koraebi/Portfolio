@@ -1,10 +1,12 @@
-import ShortcutLink from '../components/ShortcutLink';
-import HomeBanner from '../components/HomeBanner';
-import { Pages } from '../constants/common';
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { getTranslator } from 'next-intl/server';
+import { Pages } from '@/constants/common';
+import ShortcutLink from '@/components/ShortcutLink';
+import HomeBanner from '@/components/HomeBanner';
 
-export default function HomeLayout() {
-  const t: any = useTranslations('home');
+export default async function HomeLayout() {
+  const locale = useLocale();
+  const t: any = await getTranslator(locale, 'home');
 
   return (
     <main className="flex flex-col items-center">
