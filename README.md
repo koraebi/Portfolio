@@ -4,14 +4,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 I am pleased to present my meticulously crafted professional portfolio, a testament to my programming skill and expertise, diligently developed from scratch. 
 This project serves as a public repository, providing a comprehensive overview of my proficiency in various programming languages and technologies. 
-Through this repository, I aim to showcase my ability to create robust, scalable, and innovative solutions, demonstrating my commitment to excellence in the field of software development. 
+Through this repository, I aim to showcase my ability to create robust, scalable, and innovative solutions, demonstrating my commitment to excellence in the field of software engineering. 
 I invite you to explore this portfolio, delve into the intricacies of the codebase, and gain insights into my coding practices and problem-solving abilities.
 
 ## Learn More
 
-This project uses [Tailwind`](https://tailwindcss.com/docs/guides/nextjs) as CSS framework.
+This project uses [Tailwind](https://tailwindcss.com/docs/guides/nextjs) as CSS framework.
 
-Internationalization has been implemented for English and French with [next-intl`](https://next-intl-docs.vercel.app/docs/getting-started/app-router-server-components) using App Router for both Server Component with Static Rendering and Client Components with Dynamic Rendering.
+Internationalization has been implemented for English and French with [next-intl](https://next-intl-docs.vercel.app/docs/getting-started/app-router-server-components) using App Router for both Server Component with Static Rendering and Client Components with Dynamic Rendering.
 
 ## Deployment
 

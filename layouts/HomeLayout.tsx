@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { Pages } from '@/constants/common';
 import ShortcutLink from '@/components/ShortcutLink';

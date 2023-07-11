@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { ResumeLink } from '@/constants/common';
 import Rbr from '@/components/Rbr';
