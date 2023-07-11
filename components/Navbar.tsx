@@ -10,7 +10,7 @@ import { Pages, Languages } from '@/constants/common';
 
 export default function Navbar() {
   const t = useTranslations('home');
-  const pathname = usePathname().replace(new RegExp(`\\/(${Languages.join('|')})($|\\/)`, 'i'), '/'); 
+  const currentPage = usePathname().replace(new RegExp(`\\/(${Languages.join('|')})($|\\/)`, 'i'), '/'); 
 
   return (
     <nav className="sticky lg:flex bg-white top-0 z-50 items-center px-5 lg:px-10 py-5 shadow-lg gap-2">
@@ -25,7 +25,7 @@ export default function Navbar() {
             href={`/${page}`} 
             className={`
               capitalize 
-              ${pathname === `/${page}` ? 'text-gray-800' : 'text-gray-400'} 
+              ${currentPage === `/${page}` ? 'text-gray-800' : 'text-gray-400'} 
               hover:text-gray-800`}
           >
             {t(page)}
@@ -34,7 +34,7 @@ export default function Navbar() {
       </div>
       <div className="hidden lg:flex ml-auto place-items-center">
         <div className="mr-10">
-          <LanguageSwitcher pathname={pathname} languages={Languages}/>
+          <LanguageSwitcher pathname={currentPage} languages={Languages}/>
         </div>
         <Socials/>
       </div>
