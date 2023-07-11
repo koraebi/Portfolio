@@ -1,16 +1,12 @@
-export default function PortfolioProjectTile({ 
-    name, 
-    picture, 
-    categories, 
-    skills,
-    onClick,
-  }: { 
-    name: string, 
-    picture: string, 
-    categories: string[], 
-    skills: string[],
-    onClick: () => void,
-  }) {
+type Props = {
+  name: string, 
+  picture: string, 
+  categories: string[], 
+  skills: string[],
+  onClick: () => void,
+};
+
+export default function PortfolioProjectTile({ name, picture, categories, skills, onClick }: Props) {
   return (
     <div 
       className="

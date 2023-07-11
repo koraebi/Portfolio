@@ -5,13 +5,12 @@ import { useTranslations } from 'next-intl';
 import PortfolioCategoryTile from '@/components/portfolio/PortfolioCategoryTile';
 import ScrollButton from '@/components/ScrollButton';
 
-export default function PortfolioCategorySelector({ 
-    categories,
-    onCategoryChange,
-  }: { 
-    categories: PortfolioCategory[],
-    onCategoryChange: (category: string) => void,
-  }) {
+type Props = {
+  categories: PortfolioCategory[];
+  onCategoryChange: (category: string) => void,
+};
+
+export default function PortfolioCategorySelector({ categories, onCategoryChange }: Props) {
   const t = useTranslations('portfolio');
 
   const scrollRef = useRef<HTMLDivElement>(null);

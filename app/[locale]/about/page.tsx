@@ -1,6 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import PageLayout from '@/layouts/PageLayout';
 import { ResumeLink } from '@/constants/common';
 import Rbr from '@/components/Rbr';
 import Image from 'next/image';
@@ -11,11 +12,12 @@ import pictureMeTower from '/public/meTower.jpeg';
 import picturePartDesigner from '/public/partDesigner.png';
 import picturePartEngineer from '/public/partEngineer.png';
 
-export default function AboutLayout() {
+export default function About() {
+  const locale = useLocale();
   const t: any = useTranslations('about');
 
   return (
-    <main className="flex flex-col p-5 pt-10 lg:px-40">
+    <PageLayout>
       <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:p-10 lg:gap-10 place-items-center">
         <section className="w-full text-center lg:text-left">
           <h1 className="font-extrabold mb-1 lg:mb-2 text-2xl lg:text-5xl">
@@ -31,7 +33,7 @@ export default function AboutLayout() {
             {t('aboutDescription3')}<Rbr/>
             {t('aboutDescription4')}
           </p>
-          <a href={ResumeLink} target="_blank">
+          <a href={ResumeLink[locale]} target="_blank">
             <button 
               className="rounded-full bg-lightBlack p-2 px-4 text-white">
               {t('aboutButton')}
@@ -151,8 +153,7 @@ export default function AboutLayout() {
             {t('myStorySubtitle')}
           </p>
           <p className="font-light mb-4">
-            {t('myStoryDescription1')}<Rbr/>
-            {t('myStoryDescription2')}
+            {t('myStoryDescription1')}
           </p>
           <a className="rounded-full bg-lightBlack p-2 px-4 text-white" href="/story">
             {t('myStoryButton')}
@@ -164,6 +165,6 @@ export default function AboutLayout() {
           alt=""
         />
       </div>
-    </main>
-  );
+    </PageLayout>
+  )
 }

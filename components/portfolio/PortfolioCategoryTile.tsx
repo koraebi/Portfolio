@@ -1,14 +1,11 @@
-export default function PortfolioCategoryTile({ 
-    name, 
-    picture, 
-    background,
-    isSelected,
-  }: { 
-    name: string, 
-    picture: string,
-    background: string,
-    isSelected: boolean,
-  }) {
+type Props = {
+  name: string;
+  picture: string,
+  background: string,
+  isSelected: boolean,
+};
+
+export default function PortfolioCategoryTile({ name, picture, background, isSelected }: Props) {
   return (
     <div 
       className={`

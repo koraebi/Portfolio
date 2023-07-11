@@ -2,14 +2,15 @@
 
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import PageLayout from '@/layouts/PageLayout';
 import picturePartDesigner from '/public/partDesigner.png';
 import picturePartEngineer from '/public/partEngineer.png';
 
-export default function StoryLayout() {
+export default function Story() {
   const t: any = useTranslations('story');
 
   return (
-    <main className="flex flex-col p-5 pt-10 lg:px-40">
+    <PageLayout>
       <a href="/about">
         <button 
           className="rounded-full bg-lightBlack p-2 px-4 text-white">
@@ -68,6 +69,6 @@ export default function StoryLayout() {
           </p>
         </section>
       </div>
-    </main>
-  );
+    </PageLayout>
+  )
 }

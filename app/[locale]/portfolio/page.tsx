@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import PageLayout from '@/layouts/PageLayout';
 import { Sections, Projects, Categories } from '@/constants/portfolio';
 import PortfolioProjectSelector from '@/components/portfolio/PortfolioProjectSelector';
 import PortfolioCategorySelector from '@/components/portfolio/PortfolioCategorySelector';
@@ -45,7 +46,7 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="flex flex-col mt-5 p-5 lg:px-40">
+    <PageLayout>
       <div className="flex gap-10 px-10 justify-center lg:justify-start">
         {Sections.map((section: string) => (
           <div key={section} className="cursor-pointer" onClick={() => selectSection(section)}>
@@ -76,6 +77,6 @@ export default function Portfolio() {
       {selectedProject && (
         <EmbedPreview link={selectedProject} onClose={() => setSelectedProject('')}/>
       )}
-    </div>
-  );
+    </PageLayout>
+  )
 }

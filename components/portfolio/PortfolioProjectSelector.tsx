@@ -5,15 +5,13 @@ import { useTranslations } from 'next-intl';
 import PortfolioProjectTile from '@/components/portfolio/PortfolioProjectTile';
 import PortfolioInsightTile from '@/components/portfolio/PortfolioInsightTile';
 
-export default function PortfolioProjectSelector({  
-    projects,
-    section,
-    onProjectSelected
-  }: { 
-    projects: PortfolioProject[],
-    section: string,
-    onProjectSelected: (link: string) => void,
-  }) {
+type Props = {
+  projects: PortfolioProject[],
+  section: string,
+  onProjectSelected: (link: string) => void,
+};
+
+export default function PortfolioProjectSelector({ projects, section, onProjectSelected}: Props) {
   const t = useTranslations('portfolio');
   
   const [projectsStyle, setProjectsStyle] = useState({
@@ -43,14 +41,14 @@ export default function PortfolioProjectSelector({
         ${projectsStyle.opacity}
         ${projectsStyle.transition}`}
       >
-        {projects.map((project: PortfolioProject, index: number) => {
+        {projects.map((project, index) => {
           if (section === 'projects') {
             return (
               <PortfolioProjectTile 
                 key={index} 
                 name={project.name} 
                 picture={project.picture} 
-                categories={project.categories.map((category: PortfolioCategory) => t(category.id))} 
+                categories={project.categories.map(category => t(category.id))} 
                 skills={project.skills}
                 onClick={() => onProjectSelected(project.link)}
               />
@@ -62,7 +60,7 @@ export default function PortfolioProjectSelector({
                 key={index} 
                 name={project.name} 
                 picture={project.picture} 
-                categories={project.categories.map((category: PortfolioCategory) => t(category.id))} 
+                categories={project.categories.map(category => t(category.id))} 
                 skills={project.skills}
                 description={project.description}
                 onClick={() => onProjectSelected(project.link)}

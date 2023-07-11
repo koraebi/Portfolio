@@ -15,7 +15,7 @@ export default function Socials() {
           </svg>
         </Link>
         {/* Linkedin */}
-        <Link href="https://www.linkedin.com/in/sabrihbb/" target="_blank">
+        <Link href="https://www.linkedin.com/company/koraebi" target="_blank">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             className="h-5 w-5" 
@@ -26,7 +26,7 @@ export default function Socials() {
           </svg>
         </Link>
         {/* Instagram */}
-        <Link href="https://www.instagram.com/koraebi_/" target="_blank">
+        <Link href="https://www.instagram.com/koraebi_" target="_blank">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             className="h-5 w-5" 
@@ -48,7 +48,7 @@ export default function Socials() {
           </svg>
         </Link>
         {/* Youtube */}
-        <Link href="https://www.youtube.com/channel/UCbNVgjB7BGTF_ynQOPlrlzg" target="_blank">
+        <Link href="https://www.youtube.com/@koraebi" target="_blank">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             className="h-5 w-5" 

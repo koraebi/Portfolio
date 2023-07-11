@@ -1,13 +1,9 @@
-import React, { MouseEvent } from 'react';
+type Props = {
+  link:string,
+  onClose: () => void
+};
 
-export default function EmbedPreview({ 
-    link,
-    onClose
-  } : { 
-    link:string,
-    onClose: () => void
-  }) {
-
+export default function EmbedPreview({ link, onClose } : Props) {
   return (
     <div>
       <div

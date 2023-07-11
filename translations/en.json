@@ -1,8 +1,12 @@
 {
+  "metadata": {
+    "description": "Building digital products according to UX fundamentals and Software Engineering principles."
+  },
+
   "home": {
     "designer": "Designer",
     "designerSubtitle": "Interaction • User Experience • User Interface",
-    "designerDescription1": "Developping Digital Products following the Design Thinking process",
+    "designerDescription1": "Designing Digital Products following the Design Thinking process",
     "designerDescription2": "and the Human-Centred Design industry norm",
     "designerDescription3": "(ISO 9241-210-2019).",
     "designerDescription4": "Specifying -> Producing -> Evaluating",
@@ -40,12 +44,12 @@
     "referenceEngineer5": "- Gitflow Workflow",
     "skillEngineer1": "- API Documentation (Swagger)",
     "skillEngineer2": "- Game Development (Unity, Vuforia)",
-    "skillEngineer3": "- Web CMS Design (Shopify, Wix)",
-    "skillEngineer4": "- Cloud Deployment (GCP, OVH, Docker, Kubernetes)",
-    "skillEngineer5": "- Payment/Mail Service integration (Checkout, Datatrans, SendGrid, MailTrap)",
-    "skillEngineer6": "- Mobile Development (React Native, NativeWind, Xamarin)",
-    "skillEngineer7": "- Front-end Development (React.js, Next.js, Angular, Tailwind)",
-    "skillEngineer8": "- Back-end Development (Node.js, Express.js, NestJS, MongoDB, Redis)",
+    "skillEngineer3": "- Web CMS Design (Shopify, Wix, Google Site)",
+    "skillEngineer4": "- Cloud Deployment (GCP, Cloud Build / Cloud Run)",
+    "skillEngineer5": "- Mobile Development (React Native, NativeWind, Xamarin)",
+    "skillEngineer6": "- Front-end Development (React.js, Next.js, Angular, Tailwind)",
+    "skillEngineer7": "- Back-end Development (Node.js, Express.js, NestJS, MongoDB, Redis)",
+    "skillEngineer8": "- Payment/Mail Service integration (Checkout, Datatrans, SendGrid, MailTrap)",
     "partDesigner": "Part Designer",
     "referenceDesigner1": "- Human-Computer Interaction (Google Scholar, IEEE Xplore, ResearchGate)",
     "referenceDesigner2": "- ISO 9241: Ergonomics of human-system interaction",
@@ -56,9 +60,9 @@
     "skillDesigner2": "- Semi-Structured research interviews",
     "skillDesigner3": "- System Usability Scale (SUS) inquiries",
     "skillDesigner4": "- Interaction Design State of the Arts (SOTA)",
-    "skillDesigner5": "- Vector Graphics illustrations (Adobe Illustrator)",
-    "skillDesigner6": "- Video Editing (Adobe Premiere Pro / After Effect)",
-    "skillDesigner7": "- Wireframes, Mock-ups & Prototypes (Adobe XD / Figma, Sketch)",
+    "skillDesigner5": "- Video Editing (Adobe Premiere Pro / After Effect)",
+    "skillDesigner6": "- Vector Graphics illustrations (Adobe Illustrator)",
+    "skillDesigner7": "- Wireframes, Mock-ups & Prototypes (Adobe XD, Figma, Sketch)",
     "skillDesigner8": "- 3D Modeling (Blender, Adobe Substance Painter, Marvelous Designer)",
     "randomFacts": "Random Facts",
     "randomFactsSubtitle": "Some exclusive information...",
@@ -69,8 +73,7 @@
     "randomFact5": "I'm a french tacos addict.",
     "myStory": "My Story",
     "myStorySubtitle": "Let me introduce you to my life.",
-    "myStoryDescription1": "Discover how I went from security officer to software engineer. ",
-    "myStoryDescription2": "Take a look at some of my university projects.",
+    "myStoryDescription1": "Discover how I went from security officer to software engineer.",
     "myStoryButton": "Discover"
   },
 

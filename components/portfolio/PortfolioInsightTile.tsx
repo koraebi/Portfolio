@@ -1,5 +1,14 @@
 import Image from 'next/image';
 
+type Props = {
+  name: string, 
+  picture: string, 
+  categories: string[], 
+  skills: string[],
+  description: string,
+  onClick: () => void
+};
+
 export default function PortfolioInsightTile({ 
     name, 
     picture, 
@@ -7,14 +16,7 @@ export default function PortfolioInsightTile({
     skills,
     description,
     onClick,
-  }: { 
-    name: string, 
-    picture: string, 
-    categories: string[], 
-    skills: string[],
-    description: string,
-    onClick: () => void
-  }) {
+  }: Props) {
   return (
     <div 
       className="

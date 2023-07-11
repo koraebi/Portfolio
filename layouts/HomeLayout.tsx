@@ -1,28 +1,9 @@
-'use client';
+import { ReactNode } from 'react';
 
-import { useTranslations } from 'next-intl';
-import { Pages } from '@/constants/common';
-import ShortcutLink from '@/components/ShortcutLink';
-import HomeBanner from '@/components/HomeBanner';
-
-export default function HomeLayout() {
-  const t: any = useTranslations('home');
-
+export default function HomeLayout({ children }: { children: ReactNode }) {
   return (
-    <main className="flex flex-col items-center">
-      <HomeBanner/>
-      <div 
-        className="
-          place-items-center 
-          lg:justify-center
-          flex flex-col lg:flex-row 
-          w-full 
-          p-5 lg:py-10 lg:px-40 
-          text-center lg:text-left">
-        {Pages.map((page: string) => (
-          <ShortcutLink key={page} title={t(page)} link={`/${page}`} description={t(`${page}Description`)}/>
-        ))}
-      </div>
-    </main>
+    <div className="flex flex-col items-center">
+      {children}
+    </div>
   );
 }

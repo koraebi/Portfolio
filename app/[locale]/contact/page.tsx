@@ -1,13 +1,14 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import PageLayout from '@/layouts/PageLayout';
 import ContactForm from '@/components/ContactForm';
 
-export default function ContactLayout() {
+export default function Contact() {
   const t: any = useTranslations('contact');
 
   return (
-    <main className="flex flex-col mt-5 p-5 lg:px-40">
+    <PageLayout>
       <div className="flex flex-col lg:p-10 lg:grid lg:grid-cols-2 lg:gap-10">
         <section className="w-full text-center lg:text-left lg:mt-10">
           <h1 className="font-extrabold mb-1 lg:mb-2 text-2xl lg:text-5xl">
@@ -23,6 +24,6 @@ export default function ContactLayout() {
         </section>
         <ContactForm/>
       </div>
-    </main>
-  );
+    </PageLayout>
+  )
 }

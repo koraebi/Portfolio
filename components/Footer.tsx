@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { Languages } from '../constants/common';
+import { Languages } from '@/constants/common';
 import Socials from '@/components/Socials';
 import LanguageSwitcher from './LanguageSwitcher';
 

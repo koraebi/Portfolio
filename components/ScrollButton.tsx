@@ -1,12 +1,10 @@
-export default function ScrollButton({ 
-    direction, 
-    isVisible,
-    onClick,
-  }: { 
-    direction: string,
-    isVisible: boolean,
-    onClick: (direction: string) => void,
-  }) {
+type Props = {
+  direction: string,
+  isVisible: boolean,
+  onClick: (direction: string) => void,
+};
+
+export default function ScrollButton({ direction, isVisible, onClick }: Props) {
   return (
     <div 
       className={`

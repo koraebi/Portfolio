@@ -1,15 +1,16 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import PageLayout from '@/layouts/PageLayout';
 
-export default function ServicesLayout() {
+export default function Services() {
   const t: any = useTranslations('services');
 
   return (
-    <main className="flex flex-col p-5 mt-5 lg:px-40">
+    <PageLayout>
       <h1 className="font-extrabold text-center text-2xl lg:text-5xl">
         {t('comingSoon')}
       </h1>
-    </main>
-  );
+    </PageLayout>
+  )
 }
