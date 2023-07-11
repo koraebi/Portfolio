@@ -1,15 +1,14 @@
-FROM node:18-alpine AS base
-
-FROM base AS deps
-
+# COPY Files
+FROM node:18-alpine AS build-env
 WORKDIR /app
-
 COPY . .
+RUN npm ci && npm run build
 
-RUN npm ci --only=production
-RUN npm run build
+# Copy app and deps
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=build-env /app .
+RUN rm -rf node_modules && npm install --only=production
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
-
-CMD [ "npm", "start" ]
+# Run Next.js
+CMD ["npm", "start"]
