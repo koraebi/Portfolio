@@ -1,10 +1,8 @@
-import { useLocale } from 'next-intl';
-import { getTranslator } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import ContactForm from '@/components/ContactForm';
 
-export default async function ContactLayout() {
-  const locale = useLocale();
-  const t: any = await getTranslator(locale, 'contact');
+export default function ContactLayout() {
+  const t: any = useTranslations('contact');
 
   return (
     <main className="flex flex-col mt-5 p-5 lg:px-40">

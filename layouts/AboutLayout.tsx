@@ -1,5 +1,4 @@
-import { useLocale } from 'next-intl';
-import { getTranslator } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import { ResumeLink } from '@/constants/common';
 import Rbr from '@/components/Rbr';
 import Image from 'next/image';
@@ -10,9 +9,8 @@ import pictureMeTower from '/public/meTower.jpeg';
 import picturePartDesigner from '/public/partDesigner.png';
 import picturePartEngineer from '/public/partEngineer.png';
 
-export default async  function AboutLayout() {
-  const locale = useLocale();
-  const t: any = await getTranslator(locale, 'about');
+export default function AboutLayout() {
+  const t: any = useTranslations('about');
 
   return (
     <main className="flex flex-col p-5 pt-10 lg:px-40">

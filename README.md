@@ -2,9 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Introduction
 
-This repository is only an overview of my programming skills in JavaScript/TypeScript React.
-
-Open [http://www.koraebi.com](http://www.koraebi.com) with your browser to see the result.
+I am pleased to present my meticulously crafted professional portfolio, a testament to my programming skill and expertise, diligently developed from scratch. 
+This project serves as a public repository, providing a comprehensive overview of my proficiency in various programming languages and technologies. 
+Through this repository, I aim to showcase my ability to create robust, scalable, and innovative solutions, demonstrating my commitment to excellence in the field of software development. 
+I invite you to explore this portfolio, delve into the intricacies of the codebase, and gain insights into my coding practices and problem-solving abilities.
 
 ## Learn More
 
@@ -14,4 +15,6 @@ Internationalization has been implemented for English and French with [next-intl
 
 ## Deployment
 
-This web application is automatically deployed via Google Cloud Run and Cloud Build directly from this repository.
+The project deployment is seamlessly automated through Google Cloud Platform, utilizing Cloud Run and Cloud Build, directly from the source GitHub repository. This streamlined process ensures efficient and reliable deployment, reflecting my proficiency in leveraging cutting-edge cloud technologies for seamless project management.
+
+Open [http://www.koraebi.com](http://www.koraebi.com) with your browser to see the result.

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function PortfolioInsightTile({ 
     name, 
     picture, 
@@ -41,7 +43,13 @@ export default function PortfolioInsightTile({
             ))}
           </p>
         </section>
-        <img className="ml-auto h-[60px] w-[60px] lg:h-[80px] lg:w-[80px] rounded-2xl object-cover" src={picture}/>
+        <Image 
+          className="ml-auto h-[60px] w-[60px] lg:h-[80px] lg:w-[80px] rounded-2xl object-cover" 
+          src={picture}
+          width={500}
+          height={500}
+          alt=""
+        />
       </div>
       <p className="font-normal text-sm line-clamp-3 mt-3 break-words">
         {description}

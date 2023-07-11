@@ -1,9 +1,7 @@
-import { useLocale } from 'next-intl';
-import { getTranslator } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
-export default async function ServicesLayout() {
-  const locale = useLocale();
-  const t: any = await getTranslator(locale, 'services');
+export default function ServicesLayout() {
+  const t: any = useTranslations('services');
 
   return (
     <main className="flex flex-col p-5 mt-5 lg:px-40">
