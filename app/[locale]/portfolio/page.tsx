@@ -75,7 +75,10 @@ export default function Portfolio() {
         onProjectSelected={onProjectSelected}
       />
       {selectedProject && (
-        <EmbedPreview link={selectedProject} onClose={() => setSelectedProject('')}/>
+        <EmbedPreview 
+          horizontal={selectedSection === 'projects'} 
+          link={selectedProject} onClose={() => setSelectedProject('')}
+        />
       )}
     </PageLayout>
   )

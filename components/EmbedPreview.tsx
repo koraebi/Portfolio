@@ -1,9 +1,10 @@
 type Props = {
-  link:string,
+  horizontal: boolean,
+  link: string,
   onClose: () => void
 };
 
-export default function EmbedPreview({ link, onClose } : Props) {
+export default function EmbedPreview({ horizontal, link, onClose } : Props) {
   return (
     <div>
       <div
@@ -30,7 +31,7 @@ export default function EmbedPreview({ link, onClose } : Props) {
           right-0
           bottom-0
           top-0
-          ${link.includes('/presentation/') ? 'w-[946px] h-[570px]' : 'w-[826px] h-[570px]'}`}
+          ${horizontal ? 'w-[1000px] h-[600px]' : 'w-[542px] h-[800px]'}`}
         src={`${link}`}  
         allowFullScreen={true}
       >

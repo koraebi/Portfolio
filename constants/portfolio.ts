@@ -88,7 +88,7 @@ export const Projects: PortfolioProject[] = [
     categories: Categories.filter(category => category.id === 'creativeConcepts'),
     skills: ['Design Thinking', 'Adobe Photoshop', 'Adobe XD'],
     picture: '/teslaApple.png',
-    link: 'https://docs.google.com/document/d/e/2PACX-1vRIIUEFGpmsQBAl_xz1fNK2d6c7PIJJhBwPFfMSeDidpuRDJ1KHY1v6suxtB_OsgvmCA8mrtY0ewe4A/pub?embedded=true',
+    link: 'https://docs.google.com/presentation/d/e/2PACX-1vSrNunTJippMtlNddxUrPSOtGu1Za-qxxqq1h5xa76QcC2joXmXMrRAbK2gel0rLBA34F4JqDPSMkGz/embed',
     description: 'What if Tesla started to sell apples. What kind of product would it be and how would it be sold ?',
   }
 ];
