@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import PageLayout from '@/layouts/PageLayout';
-import { Sections, Projects, Categories } from '@/constants/portfolio';
+import { Projects, Categories } from '@/data/portfolio';
+import SectionSelector from '@/components/SectionSelector';
 import PortfolioProjectSelector from '@/components/portfolio/PortfolioProjectSelector';
 import PortfolioCategorySelector from '@/components/portfolio/PortfolioCategorySelector';
 import EmbedPreview from '@/components/EmbedPreview';
@@ -47,23 +48,12 @@ export default function Portfolio() {
 
   return (
     <PageLayout>
-      <div className="flex gap-10 px-10 justify-center lg:justify-start">
-        {Sections.map((section: string) => (
-          <div key={section} className="cursor-pointer" onClick={() => selectSection(section)}>
-            <h1 
-              className={`
-                text-center 
-                lg:text-left 
-                font-extrabold 
-                text-2xl 
-                lg:text-5xl 
-                ${selectedSection === section ? 'text-gray-800' : 'text-gray-400'}`}
-            >
-              {t(section)}
-            </h1>
-          </div>
-        ))}
-      </div>
+      <SectionSelector 
+        translations={t}
+        sections={['projects', 'insights']} 
+        selectedSection={selectedSection}
+        onSectionSelected={selectSection}
+      />
       <PortfolioCategorySelector 
         categories={categories} 
         onCategoryChange={onCategoryChange}

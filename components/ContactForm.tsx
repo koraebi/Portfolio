@@ -6,9 +6,20 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 export default function ContactForm() {
   const t = useTranslations('contact');
 
+  let initialSubject = '';
+
+  const params: string[] = decodeURIComponent(window.location.search)
+    .replace('?subject=', '')
+    .replaceAll('+', ' ')
+    .split('_');
+
+  if (params.length === 2) {
+    initialSubject = `${params[0]} (${params[1]})`; 
+  }
+
   const [name, setName] = useState('');
   const [from, setFrom] = useState('');
-  const [subject, setSubject] = useState('');
+  const [subject, setSubject] = useState(initialSubject);
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -18,6 +29,7 @@ export default function ContactForm() {
     if (isSubmitting || isSubmitted) return;
     
     setIsSubmitting(true);
+    
     try {
       const response = await fetch('/api/email', {
         method: 'POST',

@@ -1,65 +1,69 @@
-export const Sections: string[] = ['projects', 'insights'];
-
 export const Categories: PortfolioCategory[] = [
   {
     id: 'discovery',
     picture: '',
     background: 'bg-indigo-300',
-    section: Sections[0],
+    section: 'projects',
+  },
+  {
+    id: 'uxEngineering',
+    picture: '',
+    background: 'bg-purple-300',
+    section: 'projects',
   },
   {
     id: 'uxUiDesign',
     picture: '',
     background: 'bg-fuchsia-300',
-    section: Sections[0],
+    section: 'projects',
   },
   {
     id: 'webDevelopment',
     picture: '',
     background: 'bg-cyan-300',
-    section: Sections[0],
+    section: 'projects',
   },
   {
     id: 'mobileDevelopment',
     picture: '',
     background: 'bg-blue-300',
-    section: Sections[0],
+    section: 'projects',
   },
   {
     id: 'apiDevelopment',
     picture: '',
     background: 'bg-orange-300',
-    section: Sections[0],
+    section: 'projects',
   },
   {
     id: 'gameDevelopment',
     picture: '',
     background: 'bg-green-300',
-    section: Sections[0],
+    section: 'projects',
   },
   {
     id: 'discovery',
     picture: '',
     background: 'bg-indigo-300',
-    section: Sections[1],
+    section: 'insights',
   },
   {
     id: 'creativeConcepts',
     picture: '',
     background: 'bg-teal-300',
-    section: Sections[1],
+    section: 'insights',
   },
   {
     id: 'caseStudies',
     picture: '',
     background: 'bg-yellow-300',
-    section: Sections[1],
+    section: 'insights',
   },
   {
     id: 'independentResearch',
     picture: '',
     background: 'bg-violet-300',
-    section: Sections[1],
+    section: 'insights',
   },
 ];
 
@@ -76,7 +80,7 @@ export const Projects: PortfolioProject[] = [
   {
     section: 'projects',
     name: 'ScrumTable',
-    categories: Categories.filter(category => ['uxUiDesign', 'webDevelopment', 'mobileDevelopment', "apiDevelopment"].includes(category.id)),
+    categories: Categories.filter(category => category.id === 'uxEngineering'),
     skills: ['Adobe XD', 'React Native', 'Angular', 'NestJS'],
     picture: '/interactiveTable.jpg',
     link: 'https://docs.google.com/presentation/d/e/2PACX-1vTd0C0L43bjgitlfH_Ai0bT-IxD9gsZSr0Sp-fFojH_R2KkX50AGC7kbonNssz6UKX6UTh0zwC5I4Lt/embed',

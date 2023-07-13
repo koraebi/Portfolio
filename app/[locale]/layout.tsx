@@ -2,7 +2,7 @@ import { createTranslator, NextIntlClientProvider } from 'next-intl';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
-import { Languages } from '@/constants/common';
+import { Languages } from '@/data/common';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 

@@ -84,6 +84,7 @@
     "creativeConcepts": "Creative Concepts",
     "caseStudies": "Case Studies",
     "discovery": "Discovery",
+    "uxEngineering": "UX Engineering",
     "uxUiDesign": "UX/UI Design",
     "webDevelopment": "Web Development",
     "mobileDevelopment": "Mobile Development",
@@ -121,6 +122,25 @@
   },
 
   "services": {
-    "comingSoon": "Coming Soon..."
+    "uxDesigner": "UX/UI Designer",
+    "websiteBuilder": "Website Builder (CMS)",
+    "frontendDeveloper": "Front-End Developer",
+    "fullStackDeveloper": "Full-Stack Developer",
+    "mobileDeveloper": "Mobile Developer",
+    "services": "Services",
+    "freelance": "Freelance",
+    "employee": "Employee",
+    "shortTerm": "Short-Term",
+    "longTerm": "Long-Term",
+    "annual": "annual",
+    "day": "day",
+    "onSiteIn": "On-site in: ",
+    "remoteFrom": "Full-remote from: ",
+    "france": "France",
+    "switzerland": "Switzerland",
+    "dubai": "Dubai",
+    "proficiencies": "Proficiencies:",
+    "contact": "Contact",
+    "or": " or "
   }
 }

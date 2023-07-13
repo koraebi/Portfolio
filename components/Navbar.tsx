@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Socials from '@/components/Socials';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { Pages, Languages } from '@/constants/common';
+import { Pages, Languages } from '@/data/common';
 
 export default function Navbar() {
   const t = useTranslations('home');

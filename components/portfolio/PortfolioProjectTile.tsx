@@ -26,12 +26,16 @@ export default function PortfolioProjectTile({ name, picture, categories, skills
         </h1>
         <p className="font-semibold line-clamp-1">
           {categories.map((category: string, index: number) => (
-            <span key={index}>{category}{index !== categories.length - 1 && ', '}</span>
+            <span key={index}>
+              {category}{index !== categories.length - 1 && ' • '}
+            </span>
           ))}
         </p>
         <p className="font-normal text-sm line-clamp-1">
           {skills.map((skill: string, index: number) => (
-            <span key={index}>{skill}{index !== skills.length - 1 && ' • '}</span>
+            <span key={index}>
+              {skill}{index !== skills.length - 1 && ' • '}
+            </span>
           ))}
         </p>
       </div>

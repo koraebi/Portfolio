@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware';
-import { Languages } from '@/constants/common';
+import { Languages } from '@/data/common';
  
 export default createMiddleware({
   locales: Languages,

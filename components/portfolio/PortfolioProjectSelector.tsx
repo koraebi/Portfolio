@@ -40,34 +40,34 @@ export default function PortfolioProjectSelector({ projects, section, onProjectS
         py-5 lg:px-10 lg:pt-10
         ${projectsStyle.opacity}
         ${projectsStyle.transition}`}
-      >
-        {projects.map((project, index) => {
-          if (section === 'projects') {
-            return (
-              <PortfolioProjectTile 
-                key={index} 
-                name={project.name} 
-                picture={project.picture} 
-                categories={project.categories.map(category => t(category.id))} 
-                skills={project.skills}
-                onClick={() => onProjectSelected(project.link)}
-              />
-            )
-          }
-          if (section === 'insights') {
-            return (
-              <PortfolioInsightTile 
-                key={index} 
-                name={project.name} 
-                picture={project.picture} 
-                categories={project.categories.map(category => t(category.id))} 
-                skills={project.skills}
-                description={project.description}
-                onClick={() => onProjectSelected(project.link)}
-              />
-            )
-          }
-        })}
-      </div>
+    >
+      {projects.map((project, index) => {
+        if (section === 'projects') {
+          return (
+            <PortfolioProjectTile 
+              key={index} 
+              name={project.name} 
+              picture={project.picture} 
+              categories={project.categories.map(category => t(category.id))} 
+              skills={project.skills}
+              onClick={() => onProjectSelected(project.link)}
+            />
+          )
+        }
+        if (section === 'insights') {
+          return (
+            <PortfolioInsightTile 
+              key={index} 
+              name={project.name} 
+              picture={project.picture} 
+              categories={project.categories.map(category => t(category.id))} 
+              skills={project.skills}
+              description={project.description}
+              onClick={() => onProjectSelected(project.link)}
+            />
+          )
+        }
+      })}
+    </div>
   );
 }

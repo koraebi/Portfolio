@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import HomeLayout from '@/layouts/HomeLayout';
-import { Pages } from '@/constants/common';
+import { Pages } from '@/data/common';
 import ShortcutLink from '@/components/ShortcutLink';
 import basePicture from '/public/designerEngineer.png';
 import designerPicture from '/public/designer.png';

@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import PageLayout from '@/layouts/PageLayout';
-import { ResumeLink } from '@/constants/common';
+import { ResumeLink } from '@/data/common';
 import Rbr from '@/components/Rbr';
 import Image from 'next/image';
 
@@ -34,8 +34,7 @@ export default function About() {
             {t('aboutDescription4')}
           </p>
           <a href={ResumeLink[locale]} target="_blank">
-            <button 
-              className="rounded-full bg-lightBlack p-2 px-4 text-white">
+            <button className="rounded-full bg-lightBlack p-2 px-4 text-white">
               {t('aboutButton')}
             </button>
           </a>
