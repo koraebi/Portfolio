@@ -107,7 +107,8 @@ export default function Services() {
                     ${selectedSection === 'freelance' ? 'bg-purple-500' : 'bg-purple-600'} 
                     p-2 px-4 
                     text-white 
-                    border-2`}
+                    border-2
+                    text-base`}
                 >
                   {t('contact')}
                 </button>
