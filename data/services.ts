@@ -23,7 +23,7 @@ export const ProfessionalServices: ProfessionalService[] = [
     remote: ['france'],
     onSite: ['france'],
     period: ['shortTerm', 'longTerm'],
-    proficiencies: ['React.js', 'Vue.js', 'Tailwind CSS'],
+    proficiencies: ['React.js', 'MUI', 'Vue.js', 'VUX', 'Tailwind CSS'],
     section: 'freelance'
   },
   {
@@ -32,7 +32,7 @@ export const ProfessionalServices: ProfessionalService[] = [
     remote: ['france', 'dubai'],
     onSite: ['france', 'switzerland', 'dubai'],
     period: ['shortTerm', 'longTerm'],
-    proficiencies: ['React.js', 'Vue.js', 'Tailwind CSS', 'Node.js', 'Next.js', 'Express.js', 'NestJS', 'MongoDB', 'Redis', 'GCP'],
+    proficiencies: ['React.js', 'MUI', 'Vue.js', 'VUX', 'Tailwind CSS', 'Node.js', 'Next.js', 'Express.js', 'NestJS', 'MongoDB', 'Redis', 'GCP'],
     section: 'employee'
   },
   {
@@ -41,7 +41,7 @@ export const ProfessionalServices: ProfessionalService[] = [
     remote: ['france', 'dubai'],
     onSite: ['france', 'switzerland', 'dubai'],
     period: ['shortTerm', 'longTerm'],
-    proficiencies: ['React Native', 'Flutter', 'SQLite', 'Firebase', 'Bitrise'],
+    proficiencies: ['React Native', 'NativeBase', 'NativeWind', 'Flutter', 'SQLite'],
     section: 'employee'
   },
   {
