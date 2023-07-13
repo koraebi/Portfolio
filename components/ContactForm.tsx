@@ -1,28 +1,36 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 
 export default function ContactForm() {
   const t = useTranslations('contact');
 
-  let initialSubject = '';
+  const [name, setName] = useState('');
+  const [lockSubject, setLockSubject] = useState(false);
+  const [from, setFrom] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const params: string[] = decodeURIComponent(window.location.search)
+  useEffect(() => {
+    const params: string[] = decodeURIComponent(window.location.search)
     .replace('?subject=', '')
     .replaceAll('+', ' ')
     .split('_');
 
-  if (params.length === 2) {
-    initialSubject = `${params[0]} (${params[1]})`; 
-  }
+    if (params.length === 2) {
+      setSubject(`${params[0]} (${params[1]})`);
+      setLockSubject(true);
+    }
+  }, [])
 
-  const [name, setName] = useState('');
-  const [from, setFrom] = useState('');
-  const [subject, setSubject] = useState(initialSubject);
-  const [message, setMessage] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const onSubjectChange = (subject: string) => {
+    if (!lockSubject) {
+      setSubject(subject);
+    }
+  };
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,7 +46,7 @@ export default function ContactForm() {
         },
         body: JSON.stringify({ 
           subject,
-          message: message + `\n\n${from}`
+          message: message + `\n\n${name}.\n${from}`
         }),
       });
 
@@ -59,7 +67,6 @@ export default function ContactForm() {
         autoComplete="name"
         required
         placeholder={t('name')}
-        value={name}
         onChange={(event: ChangeEvent<HTMLInputElement>) => setName(event.target.value)}
       />
       <input
@@ -70,7 +77,6 @@ export default function ContactForm() {
         autoComplete="email"
         required
         placeholder={t('email')}
-        value={from}
         onChange={(event: ChangeEvent<HTMLInputElement>) => setFrom(event.target.value)}
       />
       <input
@@ -82,7 +88,8 @@ export default function ContactForm() {
         required
         placeholder={t('subject')}
         value={subject}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => setSubject(event.target.value)}
+        readOnly={lockSubject}
+        onChange={(event: ChangeEvent<HTMLInputElement>) => onSubjectChange(event.target.value)}
       />
       <textarea 
         id="message" 
@@ -90,7 +97,6 @@ export default function ContactForm() {
         placeholder={t('message')} 
         className="border-2 rounded-lg p-2" 
         rows={5}
-        value={message}
         onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setMessage(event.target.value)}
       >
       </textarea>
