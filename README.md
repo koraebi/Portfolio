@@ -10,8 +10,8 @@ I invite you to explore this portfolio, delve into the intricacies of the codeba
 ## Learn More
 
 This project uses [Tailwind](https://tailwindcss.com/docs/guides/nextjs) as CSS framework.
-
-Internationalization has been implemented for English and French with [next-intl](https://next-intl-docs.vercel.app/docs/getting-started/app-router-server-components) using App Router for both Server Component with Static Rendering and Client Components with Dynamic Rendering.
+No UI framework has been used in this project in order to showcase coding skills to build UI components from scratch.
+Internationalization has been implemented for English and French with [next-intl](https://next-intl-docs.vercel.app/docs/getting-started/app-router-server-components).
 
 ## Deployment
 
