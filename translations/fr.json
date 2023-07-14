@@ -122,6 +122,7 @@
   },
 
   "services": {
+    "location": "Emplacement:",
     "uxDesigner": "UX/UI Designer",
     "websiteBuilder": "Créateur Web (CMS)",
     "frontendDeveloper": "Développeur Front-End",
@@ -132,15 +133,15 @@
     "employee": "Employé",
     "shortTerm": "Court Terme",
     "longTerm": "Long Terme",
-    "annual": "annuel",
+    "year": "an",
     "day": "jour",
-    "onSiteIn": "Sur site en : ",
-    "remoteFrom": "Télétravail complet de : ",
-    "france": "France",
-    "switzerland": "Suisse",
-    "dubai": "Dubai",
+    "month": "mois",
+    "remoteOnly": "Full-remote seulement",
+    "onSiteOrRemote": "Sur site ou en full-remote",
+    "france": "FRANCE",
+    "switzerland": "SUISSE",
+    "dubai": "DUBAI",
     "proficiencies": "Compétences :",
-    "contact": "Contacter",
-    "or": " ou "
+    "contact": "Contacter"
   }
 }

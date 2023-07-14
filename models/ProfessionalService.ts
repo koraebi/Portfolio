@@ -1,24 +1,24 @@
 class ProfessionalService {
   name: string;
-  price: number;
-  remote: string[];
-  onSite: string[];
+  locations: string[];
+  prices: any;
+  remoteOnly: boolean;
   period: string[];
   proficiencies: string[];
   section: string;
  
   constructor(
     name: string,
-    price: number,
-    remote: string[],
-    onSite: string[],
+    locations: string[],
+    prices: any,
+    remoteOnly: boolean,
     period: string[],
     proficiencies: string[],
     section: string) {
     this.name = name;
-    this.price = price;
-    this.remote = remote;
-    this.onSite = onSite;
+    this.locations = locations;
+    this.prices = prices;
+    this.remoteOnly = remoteOnly;
     this.period = period;
     this.proficiencies = proficiencies;
     this.section = section;

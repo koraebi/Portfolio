@@ -1,54 +1,120 @@
 export const ProfessionalServices: ProfessionalService[] = [
   {
-    name: 'uxDesigner',
-    price: 200,
-    remote: ['france'],
-    onSite: ['france', 'dubai'],
-    period: ['shortTerm'],
-    proficiencies: ['Design Thinking', 'Usability Engineering', 'UCD/HCD', 'Adobe Creative Suite', 'Adobe XD', 'Figma'],
-    section: 'freelance'
-  },
-  {
     name: 'websiteBuilder',
-    price: 250,
-    remote: ['france'],
-    onSite: ['france'],
+    locations: ['france'],
+    prices: {
+      france: {
+        price: 200,
+        type: 'day',
+        currency: '€'
+      },
+    },
+    remoteOnly: true,
     period: ['shortTerm'],
     proficiencies: ['Shopify', 'Wix', 'Google Site', 'Adobe Commerce (Magento)'],
     section: 'freelance'
   },
   {
+    name: 'uxDesigner',
+    locations: ['france'],
+    prices: {
+      france: {
+        price: 250,
+        type: 'day',
+        currency: '€'
+      },
+    },
+    remoteOnly: false,
+    period: ['shortTerm'],
+    proficiencies: ['Design Thinking', 'Usability Engineering', 'UCD/HCD', 'Adobe Creative Suite', 'Adobe XD', 'Figma'],
+    section: 'freelance'
+  },
+  {
     name: 'frontendDeveloper',
-    price: 350,
-    remote: ['france'],
-    onSite: ['france'],
+    locations: ['france'],
+    prices: {
+      france: {
+        price: 350,
+        type: 'day',
+        currency: '€'
+      },
+    },
+    remoteOnly: false,
     period: ['shortTerm', 'longTerm'],
     proficiencies: ['React.js', 'MUI', 'Vue.js', 'VUX', 'Tailwind CSS'],
     section: 'freelance'
   },
   {
     name: 'fullStackDeveloper',
-    price: 50,
-    remote: ['france', 'dubai'],
-    onSite: ['france', 'switzerland', 'dubai'],
+    locations: ['france', 'switzerland', 'dubai'],
+    prices: {
+      france: {
+        price: 50000,
+        type: 'year',
+        currency: '€'
+      },
+      switzerland: {
+        price: 80000,
+        type: 'year',
+        currency: 'CHF'
+      },
+      dubai: {
+        price: 20000,
+        type: 'month',
+        currency: 'AED'
+      }
+    },
+    remoteOnly: false,
     period: ['shortTerm', 'longTerm'],
     proficiencies: ['React.js', 'MUI', 'Vue.js', 'VUX', 'Tailwind CSS', 'Node.js', 'Next.js', 'Express.js', 'NestJS', 'MongoDB', 'Redis', 'GCP'],
     section: 'employee'
   },
   {
     name: 'mobileDeveloper',
-    price: 40,
-    remote: ['france', 'dubai'],
-    onSite: ['france', 'switzerland', 'dubai'],
+    locations: ['france', 'switzerland', 'dubai'],
+    prices: {
+      france: {
+        price: 40000,
+        type: 'year',
+        currency: '€'
+      },
+      switzerland: {
+        price: 70000,
+        type: 'year',
+        currency: 'CHF'
+      },
+      dubai: {
+        price: 15000,
+        type: 'month',
+        currency: 'AED'
+      }
+    },
+    remoteOnly: false,
     period: ['shortTerm', 'longTerm'],
     proficiencies: ['React Native', 'NativeBase', 'NativeWind', 'Flutter', 'SQLite'],
     section: 'employee'
   },
   {
     name: 'uxDesigner',
-    price: 35,
-    remote: ['france', 'dubai'],
-    onSite: ['france', 'switzerland', 'dubai'],
+    locations: ['france', 'switzerland', 'dubai'],
+    prices: {
+      france: {
+        price: 35000,
+        type: 'year',
+        currency: '€'
+      },
+      switzerland: {
+        price: 65000,
+        type: 'year',
+        currency: 'CHF'
+      },
+      dubai: {
+        price: 10000,
+        type: 'month',
+        currency: 'AED'
+      }
+    },
+    remoteOnly: false,
     period: ['shortTerm', 'longTerm'],
     proficiencies: ['Design Thinking', 'Usability Engineering', 'UCD/HCD', 'Adobe Creative Suite', 'Adobe XD', 'Figma'],
     section: 'employee'

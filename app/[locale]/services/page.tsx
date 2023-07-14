@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 import PageLayout from '@/layouts/PageLayout';
 import SectionSelector from '@/components/SectionSelector';
@@ -10,11 +10,13 @@ export default function Services() {
   const t: any = useTranslations('services');
 
   const [selectedSection, setSelectedSection] = useState('freelance');
+  const [selectedCountry, setSelectedCountry] = useState('france');
 
   const selectSection = (section: string): void => {
     if (section === selectedSection) return;
     
     setSelectedSection(section);
+    setSelectedCountry('france');
   };
 
   return (
@@ -39,15 +41,35 @@ export default function Services() {
             className={`
               flex flex-col 
               p-5 
-              gap-5 
+              gap-6 
               text-center 
               ${selectedSection === 'freelance' ? 'bg-purple-400' : 'bg-purple-500'} 
               rounded-2xl`}
           >
-            <h2 className="justify-center font-extrabold text-lg lg:text-xl">
-              {t(service.name)}
-            </h2>
-            <hr className="h-px bg-gray-200 border-0"/>
+            <section>
+              <h2 className="justify-center font-extrabold mb-5 text-lg lg:text-xl">
+                {t(service.name)}
+              </h2>
+              <hr className="h-px bg-gray-200 border-0"/>
+            </section>
+            <section>
+              <p className="text-xs">
+                {t('location')}
+              </p>
+              <p className="flex justify-evenly">
+                {service.locations.map((country, index) => (
+                  <span 
+                    key={index} 
+                    className={`
+                      ${country === selectedCountry ? 'font-semibold text-white' : 'text-purple-200'}
+                      cursor-pointer`}
+                    onClick={() => setSelectedCountry(country)}
+                  >
+                    {t(country)}
+                  </span>
+                ))}
+              </p>
+            </section>
             <section>
               <p className="text-xs">
                 {service.period.map((period, index) => (
@@ -58,10 +80,10 @@ export default function Services() {
               </p>
               <p>
                 <span className="text-2xl">
-                  {`${service.price}${selectedSection === 'employee' ? 'K' : ''} €`}
+                  {`${service.prices[selectedCountry].price} ${service.prices[selectedCountry].currency}`}
                 </span>
                 <span className="text-lg">
-                  /{selectedSection === 'freelance' ? t('day') : t('annual')}
+                  /{t(service.prices[selectedCountry].type)}
                 </span>
               </p>
             </section>
@@ -78,25 +100,8 @@ export default function Services() {
               </p>
             </section>
             <section className="flex flex-col gap-2 text-xs mt-auto">
-              <p>
-                <span className="font-semibold">
-                  ✔ {t('onSiteIn')}
-                </span>
-                {service.onSite.map((country, index, array) => (
-                  <span key={country}>
-                    {index !== 0 && `${index + 1 === array.length ? t('or') : ', '}`}{t(country)}
-                  </span>
-                ))}
-              </p>
-              <p>
-                <span className="font-semibold">
-                  ✔ {t('remoteFrom')}
-                </span>
-                {service.remote.map((country, index, array) => (
-                  <span key={country}>
-                    {index !== 0 && `${index + 1 === array.length ? t('or') : ', '}`}{t(country)}
-                  </span>
-                ))}
+              <p className="font-semibold">
+                {service.remoteOnly ? t('remoteOnly') : t('onSiteOrRemote')}
               </p>
               <a 
                 href={`/contact?subject=${t(service.name) + '_' + t(service.section)}`} 

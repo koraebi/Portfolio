@@ -122,6 +122,7 @@
   },
 
   "services": {
+    "location": "Location: ",
     "uxDesigner": "UX/UI Designer",
     "websiteBuilder": "Website Builder (CMS)",
     "frontendDeveloper": "Front-End Developer",
@@ -132,15 +133,15 @@
     "employee": "Employee",
     "shortTerm": "Short-Term",
     "longTerm": "Long-Term",
-    "annual": "annual",
+    "year": "year",
     "day": "day",
-    "onSiteIn": "On-site in: ",
-    "remoteFrom": "Full-remote from: ",
-    "france": "France",
-    "switzerland": "Switzerland",
-    "dubai": "Dubai",
+    "month": "month",
+    "remoteOnly": "Full-remote only",
+    "onSiteOrRemote": "On-site or full-remote",
+    "france": "FRANCE",
+    "switzerland": "SWITZERLAND",
+    "dubai": "DUBAI",
     "proficiencies": "Proficiencies:",
-    "contact": "Contact",
-    "or": " or "
+    "contact": "Contact"
   }
 }
